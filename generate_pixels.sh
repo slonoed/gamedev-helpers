@@ -18,7 +18,9 @@ if [ ! -d "$output_path" ]; then
 fi
 
 # Define an array of common colors
-colors=("red" "green" "blue" "yellow" "orange" "purple" "cyan" "magenta" "black" "white")
+colors=("red" "green" "blue" "yellow" "orange" "purple" "cyan" "magenta" "black" "white"
+        "lime" "teal" "navy" "maroon" "olive" "gray" "skyblue" "pink" "violet" "salmon"
+        "gold" "coral" "turquoise" "tan" "plum" "sienna" "beige" "lavender")
 
 # Loop through each color and create a 1x1 PNG file in the specified path
 for color in "${colors[@]}"; do
