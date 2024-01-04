@@ -15,15 +15,14 @@ if [ ! -d "$output_path" ]; then
     exit 1
 fi
 
-# Define an array of 30 common colors
+# Define an array of 28 common colors, removing "mint" and "peach"
 colors=("red" "green" "blue" "yellow" "orange" "purple" "cyan" "magenta" "black" "white"
         "lime" "teal" "navy" "maroon" "olive" "gray" "skyblue" "pink" "violet" "salmon"
         "gold" "coral" "turquoise" "tan" "plum" "sienna" "beige" "lavender")
 
-# Loop through each color and create a 64x64 PNG file with a circle in the middle
+# Loop through each color and create a 64x64 PNG file with a circle that spans the image
 for color in "${colors[@]}"; do
-    convert -size 64x64 xc:none -fill "$color" -draw "circle 32,32 32,48" "${output_path%/}/${color}_circle.png"
+    convert -size 64x64 xc:none -fill "$color" -draw "circle 32,32 32,0" "${output_path%/}/${color}_circle.png"
 done
 
-echo "PNG files with circles created in $output_path"
-
+echo "PNG files with full-width circles created in $output_path"
